@@ -8,7 +8,7 @@ import { AppComponent, environment } from './app/';
 import { notes } from './app/notes/';
 import { NotesEffectsService } from './app/notes';
 import { NotesDataService } from './app/notes';
-
+import { items, dateFilter } from './app/notes/reducers/filter.reducer';
 if (environment.production) {
   enableProdMode();
 }
@@ -16,6 +16,6 @@ if (environment.production) {
 bootstrap(AppComponent, [
   ...HTTP_PROVIDERS,
   NotesDataService,
-  provideStore({notes}, {notes:[]}),
+  provideStore({items, dateFilter}),
   runEffects(NotesEffectsService) //comment this out if you want to explore the non @ngrx/effects approaches
 ]);

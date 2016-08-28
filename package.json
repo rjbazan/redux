@@ -14,7 +14,8 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "backend": "json-server --watch backend/db.json --delay 2000"
+    "backend": "json-server --watch backend/db.json --delay 2000",
+    "newbackend": "json-server --watch backend/items.json --delay 2000"
   },
   "private": true,
   "dependencies": {

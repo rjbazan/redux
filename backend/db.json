@@ -11,15 +11,41 @@
       "id": 2,
       "text": "Thanks @robwormald & @MikeRyan52 for @ngrx.",
       "colour": "blue",
-      "left": 300,
-      "top": 200
+      "left": 467,
+      "top": 147,
+      "dirty": true
     },
     {
       "id": 3,
       "text": "And everybody from the angular, angular-cli, @ngrx/store and @ngrx/effects gitter.im channels who answered my stoopid questions.",
       "colour": "yellow",
-      "left": 400,
-      "top": 300
+      "left": 584,
+      "top": 320,
+      "dirty": true
+    },
+    {
+      "text": "Test",
+      "colour": "green",
+      "left": 201,
+      "top": 385,
+      "id": "963c7a10-6c53-11e6-859a-9f724ce9b03b",
+      "dirty": true
+    },
+    {
+      "text": "",
+      "colour": "red",
+      "left": 945,
+      "top": 298,
+      "id": "afbccc10-6c53-11e6-859a-9f724ce9b03b",
+      "dirty": true
+    },
+    {
+      "text": "",
+      "colour": "red",
+      "left": 943,
+      "top": 72,
+      "id": "b0196b00-6c53-11e6-859a-9f724ce9b03b",
+      "dirty": true
     }
   ]
 }
