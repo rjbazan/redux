@@ -9,12 +9,14 @@ import { notes } from './app/notes/';
 import { NotesEffectsService } from './app/notes';
 import { NotesDataService } from './app/notes';
 import { items, dateFilter } from './app/notes/reducers/filter.reducer';
+import { appRouterProviders } from './app/app.routes';
 if (environment.production) {
   enableProdMode();
 }
 
 bootstrap(AppComponent, [
   ...HTTP_PROVIDERS,
+  appRouterProviders,
   NotesDataService,
   provideStore({items, dateFilter}),
   runEffects(NotesEffectsService) //comment this out if you want to explore the non @ngrx/effects approaches

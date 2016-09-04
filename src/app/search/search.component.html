@@ -1,0 +1,8 @@
+<h1>Got Right what you need</h1>
+<p class="lead">Use the search box below to search for different artists using the Spotify API</p>
+<search-box (update)="update($event)"></search-box>
+<div *ngIf="artists">
+  <div *ngFor="let artist of artists | async">
+    <search-item-render [artist]="artist"></search-item-render>
+  </div>
+</div>

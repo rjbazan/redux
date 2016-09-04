@@ -19,7 +19,7 @@ import 'rxjs/add/operator/filter';
   template: `
     <date-range (dateRange)="getRange($event)"></date-range>
     <ul>
-      <li *ngFor="let item of items">{{item.name}}</li>
+      <li *ngFor="let item of items.items">{{item.name}}</li>
     </ul>
     <div>{{items | json}}</div>
   `
@@ -40,12 +40,16 @@ export class MainViewComponent implements OnInit {
       })*/
 
     Observable.combineLatest(
-      store.select('items'),
-      store.select('dateFilter'),
-      (items:any, filter) => {
-        return items.items.filter(filter)
+      store.select<AppState>('items'),
+      store.select<any>('dateFilter'),
+      (items, filter) => {
+        return {
+          items: items.items.filter(filter),
+          loading: items.loading
+        }
       }
     ).subscribe(res => {
+      console.log(res)
       this.items = res;
     })
 
@@ -53,7 +57,8 @@ export class MainViewComponent implements OnInit {
 
   getRange(range) {
     this.store.dispatch({
-      type: range[0] && range[1] ? "SHOW_ITEMS_IN_RANGE" : "SHOW_ALL"
+      type: range[0] && range[1] ? "SHOW_ITEMS_IN_RANGE" : "SHOW_ALL",
+      payload: range
     });
   }
 
