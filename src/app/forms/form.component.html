@@ -1,70 +1,164 @@
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <my-date-picker [options]="options" (dateChanged)="onDateChanged($event)"></my-date-picker>
-  </div>
-  <div class="form-group">
-    <label for="exampleSelect1">Example select</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleTextarea">Example textarea</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-  </div>
-  <fieldset class="form-group">
-    <legend>Radio buttons</legend>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-        Option one is this and that&mdash;be sure to include why it's great
+<div class="page-header">
+  <h1>Import</h1>
+</div>
+<form autocomplete="off" novalidate class="form-inline" (ngSubmit)="submitForm()">
+  <radio-selector (onSelectAllChanged)="onSelectAllChanged($event)" [selection]="selectAll"></radio-selector>
+  <div class="control-group">
+    <label class="control-label" for="CompanySettings">Company settings</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.CompanySettings" name="CompanySettings" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.CompanySettings" name="CompanySettings"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.CompanySettings" name="CompanySettings"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert or duplicate
       </label>
     </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-        Option two can be something else and selecting it will deselect option one
-      </label>
-    </div>
-    <div class="radio disabled">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-        Option three is disabled
-      </label>
-    </div>
-  </fieldset>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <div class="control-group">
+    <label class="control-label" for="AccountSettings">Account settings</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.AccountSettings" name="AccountSettings" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.AccountSettings" name="AccountSettings"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+      </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="AnalysisPlans">Analysis and analysis plans</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.AnalysisPlans" name="AnalysisPlans" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.AnalysisPlans" name="AnalysisPlans"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.AnalysisPlans" name="AnalysisPlans"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert or duplicate
+      </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="Reconciliation">Reconciliation and reconciliation plans</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.Reconciliation" name="Reconciliation" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.Reconciliation" name="Reconciliation"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.Reconciliation" name="Reconciliation"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert or duplicate
+        </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="DataMergeRules">Data Merge Rules</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.DataMergeRules" name="DataMergeRules" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+        </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.DataMergeRules" name="DataMergeRules"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+        </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.DataMergeRules" name="DataMergeRules"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert or duplicate
+        </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="ImportProfiles">Import Profiles</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.ImportProfiles" name="ImportProfiles" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+        </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.ImportProfiles" name="ImportProfiles"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+        </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.ImportProfiles" name="ImportProfiles"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert or duplicate
+        </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="ReportTemplates">Report Templates</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.ReportTemplates" name="ReportTemplates" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+        </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.ReportTemplates" name="ReportTemplates"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+        </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.ReportTemplates" name="ReportTemplates"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert or duplicate
+        </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="LookupTables">Lookup Tables</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.LookupTables" name="LookupTables" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+        </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.LookupTables" name="LookupTables"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+          Overwrite
+      </label>
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.LookupTables" name="LookupTables"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert or duplicate
+      </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="Users">Users</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" [(ngModel)]="form.Users" name="Users" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+          Do not import
+      </label>
+      <label class="radio inline" style="margin-left: 75px;">
+        <input type="radio" [(ngModel)]="form.Users" name="Users"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+          Insert
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default">Import</button>
 </form>
+<br><br>
+<div class="lead">
+  {{form | json}}
+</div>

@@ -1,24 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { MyDatePicker } from 'MyDatePicker/src/index';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { RadioSelectorComponent } from './select.component';
+import { FormState, ImportForm } from './form';
 
 @Component({
   moduleId: module.id,
   selector: 'entry-form',
+  directives: [RadioSelectorComponent],
   templateUrl: 'form.component.html'
 })
-export class FormComponent implements OnInit {
-  private options: any;
-  constructor() { }
+export class FormComponent {
+  private form: ImportForm;
+  private selectAll: string;
 
-  ngOnInit() {
-    this.options = {
-      dateFormat: 'yyyy-mm-dd',
-      height: '34px',
-      width: '260px'
-    }
+  constructor(public store: Store<any>) {
+    store.select('formReducer').subscribe((data:FormState) => {
+      this.selectAll = data.SelectAll;
+      this.form = data.ImportForm;
+    });
   }
 
-  onDateChanged(event) {
-    console.log(event);
+  onSelectAllChanged(event) {
+    this.store.dispatch({ type: event.Action, payload: {} });
+  }
+
+  onRadioChange(event) {
+    this.store.dispatch({ type: 'RADIO_CHANGE', payload: { value: event, form: this.form } });
+  }
+
+  submitForm() {
+    this.store.dispatch({ type: 'SUBMIT_FORM', payload: this.form });
   }
 }

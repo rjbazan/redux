@@ -31,6 +31,7 @@ const barrels: string[] = [
   '@ngrx/core',
   '@ngrx/store',
   '@ngrx/effects',
+  '@angular/forms',
 
   // Thirdparty barrels.
   'rxjs',
