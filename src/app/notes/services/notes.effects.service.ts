@@ -11,11 +11,11 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 
 import { Action } from '@ngrx/store';
-import { StateUpdates, Effect } from '@ngrx/effects'
+import { Effect } from '@ngrx/effects'
 
 @Injectable()
 export class NotesEffectsService {
-  constructor(private notesDataService: NotesDataService, private updates$: StateUpdates<any>) {}
+  constructor(private notesDataService: NotesDataService, private updates$: any) {}
 
   //Note, effectively the same approach as notes.service.store_first_on_add where all updates and adds become a Post request and the backend just figures it out
   @Effect() update$ = this.updates$

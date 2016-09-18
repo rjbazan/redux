@@ -1,4 +1,4 @@
-import {
+/*import {
   beforeEach,
   beforeEachProviders,
   describe,
@@ -58,4 +58,4 @@ describe('Reducer: Notes', () => {
     });  
 });
 
-
+*/

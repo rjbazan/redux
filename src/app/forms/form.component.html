@@ -1,21 +1,21 @@
 <div class="page-header">
   <h1>Import</h1>
 </div>
-<form autocomplete="off" novalidate class="form-inline" (ngSubmit)="submitForm()">
+<form autocomplete="off" novalidate class="form-inline" (ngSubmit)="submitForm(importForm.value)" [formGroup]="importForm">
   <radio-selector (onSelectAllChanged)="onSelectAllChanged($event)" [selection]="selectAll"></radio-selector>
   <div class="control-group">
     <label class="control-label" for="CompanySettings">Company settings</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.CompanySettings" name="CompanySettings" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="CompanySettings" name="CompanySettings" value="NOT_IMPORT"/>
           Do not import
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.CompanySettings" name="CompanySettings"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="CompanySettings" name="CompanySettings"  value="OVERWRITE"/>
           Overwrite
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.CompanySettings" name="CompanySettings"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="CompanySettings"  name="CompanySettings" value="INSERT"/>
           Insert or duplicate
       </label>
     </div>
@@ -25,11 +25,11 @@
     <label class="control-label" for="AccountSettings">Account settings</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.AccountSettings" name="AccountSettings" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="AccountSettings" name="AccountSettings"  value="NOT_IMPORT"/>
           Do not import
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.AccountSettings" name="AccountSettings"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="AccountSettings" name="AccountSettings" value="OVERWRITE" />
           Overwrite
       </label>
     </div>
@@ -39,15 +39,15 @@
     <label class="control-label" for="AnalysisPlans">Analysis and analysis plans</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.AnalysisPlans" name="AnalysisPlans" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="AnalysisPlans" name="AnalysisPlans" value="NOT_IMPORT"/>
           Do not import
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.AnalysisPlans" name="AnalysisPlans"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="AnalysisPlans"  name="AnalysisPlans" value="OVERWRITE"/>
           Overwrite
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.AnalysisPlans" name="AnalysisPlans"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="AnalysisPlans"  name="AnalysisPlans" value="INSERT"/>
           Insert or duplicate
       </label>
     </div>
@@ -57,15 +57,15 @@
     <label class="control-label" for="Reconciliation">Reconciliation and reconciliation plans</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.Reconciliation" name="Reconciliation" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="Reconciliation" name="Reconciliation" value="NOT_IMPORT"/>
           Do not import
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.Reconciliation" name="Reconciliation"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="Reconciliation" name="Reconciliation" value="OVERWRITE"/>
           Overwrite
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.Reconciliation" name="Reconciliation"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="Reconciliation" name="Reconciliation" value="INSERT"/>
           Insert or duplicate
         </label>
     </div>
@@ -75,15 +75,15 @@
     <label class="control-label" for="DataMergeRules">Data Merge Rules</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.DataMergeRules" name="DataMergeRules" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="DataMergeRules" name="DataMergeRules" value="NOT_IMPORT"/>
           Do not import
         </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.DataMergeRules" name="DataMergeRules"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="DataMergeRules"  name="DataMergeRules" value="OVERWRITE"/>
           Overwrite
         </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.DataMergeRules" name="DataMergeRules"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="DataMergeRules"  name="DataMergeRules" value="INSERT"/>
           Insert or duplicate
         </label>
     </div>
@@ -93,15 +93,15 @@
     <label class="control-label" for="ImportProfiles">Import Profiles</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.ImportProfiles" name="ImportProfiles" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="ImportProfiles" name="ImportProfiles" value="NOT_IMPORT"/>
           Do not import
         </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.ImportProfiles" name="ImportProfiles"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="ImportProfiles"  name="ImportProfiles" value="OVERWRITE"/>
           Overwrite
         </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.ImportProfiles" name="ImportProfiles"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="ImportProfiles"  name="ImportProfiles" value="INSERT"/>
           Insert or duplicate
         </label>
     </div>
@@ -111,15 +111,15 @@
     <label class="control-label" for="ReportTemplates">Report Templates</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.ReportTemplates" name="ReportTemplates" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="ReportTemplates" name="ReportTemplates" value="NOT_IMPORT"/>
           Do not import
         </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.ReportTemplates" name="ReportTemplates"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="ReportTemplates"  name="ReportTemplates" value="OVERWRITE"/>
           Overwrite
         </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.ReportTemplates" name="ReportTemplates"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="ReportTemplates"  name="ReportTemplates" value="INSERT"/>
           Insert or duplicate
         </label>
     </div>
@@ -129,15 +129,15 @@
     <label class="control-label" for="LookupTables">Lookup Tables</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.LookupTables" name="LookupTables" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="LookupTables" name="LookupTables" value="NOT_IMPORT"/>
           Do not import
         </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.LookupTables" name="LookupTables"  value="OVERWRITE" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="LookupTables"  name="LookupTables" value="OVERWRITE"/>
           Overwrite
       </label>
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.LookupTables" name="LookupTables"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="LookupTables"  name="LookupTables" value="INSERT"/>
           Insert or duplicate
       </label>
     </div>
@@ -147,18 +147,171 @@
     <label class="control-label" for="Users">Users</label>
     <div class="controls">
       <label class="radio inline">
-        <input type="radio" [(ngModel)]="form.Users" name="Users" value="NOT_IMPORT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="Users" name="Users" value="NOT_IMPORT"/>
           Do not import
       </label>
       <label class="radio inline" style="margin-left: 75px;">
-        <input type="radio" [(ngModel)]="form.Users" name="Users"  value="INSERT" (ngModelChange)="onRadioChange($event)"/>
+        <input type="radio" formControlName="Users"  name="Users" />
           Insert
       </label>
     </div>
   </div>
+  <div class="control-group">
+    <label class="control-label" for="File">File Upload</label>
+    <div class="controls">
+        <input type="file" formControlName="File" name="File" (change)="fileUpload($event)"/>
+    </div>
+  </div>
   <button type="submit" class="btn btn-default">Import</button>
 </form>
-<br><br>
-<div class="lead">
-  {{form | json}}
-</div>
+{{importForm.value | json}}
+  <form name="federalForm" autocomplete="off" ng-submit="vm.save()" novalidate>
+    <div class="row col-md-offset-3 col-xs-offset-1">
+      <h5><strong>Married Status</strong></h5>
+      <div>
+
+        <label class="ui-radio-item">
+          <div class="ui-radio">
+            <input name="filing_state"
+            ng-value="'SINGLE'"
+            ng-model="vm.federalForm.filing_state"
+            ng-class="vm.federalForm.filing_state === 'SINGLE' ? 'checked' : ''"
+            ng-required="true"
+            type="radio" />
+
+            <div class="ui-radio-checked"></div>
+          </div>
+          Single
+        </label>
+        <label class="ui-radio-item">
+          <div class="ui-radio">
+            <input name="filing_state"
+              ng-value="'MARRIED'"
+              ng-model="vm.federalForm.filing_state"
+              ng-class="vm.federalForm.filing_state === 'MARRIED' ? 'checked' : ''"
+              ng-required="true"
+              type="radio" />
+
+            <div class="ui-radio-checked"></div>
+          </div>
+          Married
+        </label>
+
+        <label class="ui-radio-item">
+          <div class="ui-radio">
+            <input name="filing_state"
+              ng-value="'MARRIED_WITHHOLDING'"
+              ng-model="vm.federalForm.filing_state"
+              ng-class="vm.federalForm.filing_state === 'MARRIED_WITHHOLDING' ? 'checked' : ''"
+              ng-required="true"
+              type="radio" />
+
+            <div class="ui-radio-checked"></div>
+          </div>
+          Married, withholding at single rate
+        </label>
+      </div>
+
+      <div ng-messages="federalForm.filing_state.$error" role="alert" ng-show="federalForm.$submitted">
+        <div ng-message="required">Required</div>
+      </div>
+    </div>
+    <div class="row col-md-offset-3 col-xs-offset-1">
+      <h5><strong>Does your last name differ from that shown on your social security card?</strong></h5>
+      <div>
+
+        <label class="ui-radio-item">
+          <div class="ui-radio">
+            <input name="different_lastname"
+              ng-value="false"
+              ng-model="vm.federalForm.different_lastname"
+              ng-class="vm.federalForm.different_lastname === false ? 'checked' : ''"
+              ng-required="true"
+              type="radio" />
+
+            <div class="ui-radio-checked"></div>
+          </div>
+          No
+        </label>
+        <label class="ui-radio-item">
+          <div class="ui-radio">
+            <input name="different_lastname"
+              ng-value="true"
+              ng-model="vm.federalForm.different_lastname"
+              ng-class="vm.federalForm.different_lastname === true ? 'checked' : ''"
+              ng-required="true"
+              type="radio" />
+
+            <div class="ui-radio-checked"></div>
+          </div>
+          Yes
+        </label>
+      </div>
+
+      <div ng-messages="federalForm.different_lastname.$error" role="alert" ng-show="federalForm.different_lastname.$error.required">
+        <div ng-message="required">Required</div>
+      </div>
+    </div>
+
+    <div class="row col-md-offset-3 col-xs-offset-1">
+      <h5><strong>What is the total number of allowances you would like to claim?</strong></h5>
+      <input type="text"
+        name="allowances"
+        class="form-control"
+        ui-number-mask="0"
+        ng-model="vm.federalForm.allowances"
+        maxlength="3">
+    </div>
+
+    <div class="row col-md-offset-3 col-xs-offset-1 additional-info">
+      <div class="left-col">
+        <input type="checkbox"
+          name="additional_withholding"
+          ng-model="vm.federalForm.additional_withholding"
+          id="additional_withholding"
+          class="css-checkbox" />
+        <label for="additional_withholding" class="css-label"></label>
+      </div>
+      <div class="right-col">
+        <h5><strong>Check here if you would like to withhold any additional amount from each paycheck.</strong></h5>
+      </div>
+      <div class="clear"></div>
+      <div class="right-col" ng-if="vm.federalForm.additional_withholding">
+        <h5>What additional amount, if any, would you want to withhold from each paycheck?</h5>
+        <input type="text"
+          name="additional_amount"
+          class="form-control"
+          ui-money-mask
+          required
+          maxlength="14"
+          ng-model="vm.federalForm.additional_amount">
+
+        <div ng-messages="federalForm.additional_amount.$error" role="alert" ng-show="federalForm.$submitted">
+          <div ng-message="required">Required</div>
+        </div>
+      </div>
+      <div class="left-col">
+        <input type="checkbox"
+          name="exempt"
+          ng-model="vm.federalForm.exempt"
+          id="exempt"
+          class="css-checkbox" />
+        <label for="exempt" class="css-label"></label>
+      </div>
+      <div class="right-col">
+        <h5><strong>I claim exempt from withholding for 2016, and I certify that I meet both of the following conditions for exemption:</strong></h5>
+      </div>
+      <div class="clear"></div>
+      <ol class="w4-list">
+        <li><span class="federal">Last year I had a right to a refund of all Federal income tax withheld because I had no tax liability.</span></li>
+        <li><span class="federal">This year I expect a refund of all Federal income tax withheld because I expect to have no tax liability.</span></li>
+      </ol>
+      <div role="alert" ng-show="vm.formError">
+        <div>Allowances must be blank and additional withholding amount cannot be selected if claiming exempt</div>
+      </div>
+      <div class="row pull-right">
+        <button type="submit" class="btn btn-raised continue">Continue</button>
+      </div>
+    </div>
+
+  </form>

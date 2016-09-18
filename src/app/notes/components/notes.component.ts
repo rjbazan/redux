@@ -17,7 +17,6 @@ import { NotesServiceStoreOnly } from '../services/notes.service.store_only';
   selector: 'app-notes',
   templateUrl: 'notes.component.html',
   styleUrls: ['notes.component.css'],
-  directives: [NoteComponent, AddButtonComponent],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotesComponent implements OnInit {

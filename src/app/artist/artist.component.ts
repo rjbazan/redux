@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../services/spotify.service';
 import { Artist } from '../models/artist.model'
 import { Album } from '../models/album.model'
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   moduleId: module.id,
   selector: 'artist',
-  directives: [ROUTER_DIRECTIVES],
   templateUrl: 'artist.component.html',
   styles: [`
   .artist-header {

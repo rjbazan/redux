@@ -29,7 +29,7 @@ export const formReducer = (initialState: FormState = {
     case "NOT_IMPORT":
       return Object.assign({}, initialState, {
         SelectAll: action.type,
-        ImportForm: {  
+        ImportForm: {
           CompanySettings: action.type,
           AccountSettings: action.type,
           AnalysisPlans: action.type,

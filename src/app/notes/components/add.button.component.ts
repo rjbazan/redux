@@ -5,8 +5,7 @@ import { NgClass } from '@angular/common';
   moduleId: module.id,
   selector: "add-button",
   templateUrl: 'add.button.component.html',
-  styleUrls: ['add.button.component.css'], 
-  directives: [NgClass]
+  styleUrls: ['add.button.component.css']
 })
 export class AddButtonComponent {
   @Input() addType: string;

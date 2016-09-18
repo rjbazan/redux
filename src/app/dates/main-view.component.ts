@@ -15,7 +15,6 @@ import 'rxjs/add/operator/filter';
 @Component({
   moduleId: module.id,
   selector: 'main-view',
-  directives: [DateRangeComponent],
   template: `
     <date-range (dateRange)="getRange($event)"></date-range>
     <ul>

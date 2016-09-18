@@ -1,4 +1,4 @@
-import {
+/*import {
   beforeEachProviders,
   describe,
   expect,
@@ -19,4 +19,4 @@ describe('App: MyApp', () => {
       inject([AppComponent], (app: AppComponent) => {
     expect(app.title).toEqual('Angular2 State Management Demo');
   }));
-});
+});*/

@@ -1,4 +1,4 @@
-import {
+/*import {
   beforeEach,
   beforeEachProviders,
   describe,
@@ -54,4 +54,4 @@ describe('Component: Notes', () => {
 })
 class NotesComponentTestController {
 }
-
+*/

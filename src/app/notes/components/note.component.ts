@@ -7,8 +7,7 @@ import { Note } from '../note.model'
   moduleId: module.id,
   selector: 'app-note',
   templateUrl: 'note.component.html',
-  styleUrls: ['note.component.css'],
-  directives: [Draggable, NgClass]
+  styleUrls: ['note.component.css']
 })
 export class NoteComponent {
   @Input() note: Note;

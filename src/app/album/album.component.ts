@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyService } from '../services/spotify.service';
 import { Artist } from '../models/artist.model'
@@ -9,7 +9,6 @@ import { Track } from '../models/track.model'
 @Component({
   moduleId: module.id,
   selector: 'album',
-  directives: [ROUTER_DIRECTIVES],
   templateUrl: 'album.component.html',
   styles: [`
    .reset-list {

@@ -1,18 +1,32 @@
+"use strict";
+
+// SystemJS configuration file, see links for more information
+// https://github.com/systemjs/systemjs
+// https://github.com/systemjs/systemjs/blob/master/docs/config-api.md
+
 /***********************************************************************************************
  * User Configuration.
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'node-uuid': 'vendor/node-uuid'
+  'app': 'src/app',
+  'main': 'main.js',
+  '@ngrx/core': 'vendor/@ngrx/core/bundles/core.umd.js',
+  '@ngrx/store': 'vendor/@ngrx/store/bundles/store.umd.js',
+  '@angular/core': 'vendor/@angular/core/bundles/core.umd.js',
+  '@angular/common': 'vendor/@angular/common/bundles/common.umd.js',
+  '@angular/compiler': 'vendor/@angular/compiler/bundles/compiler.umd.js',
+  '@angular/platform-browser': 'vendor/@angular/platform-browser/bundles/platform-browser.umd.js',
+  '@angular/platform-browser-dynamic': 'vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+  '@angular/http': 'vendor/@angular/http/bundles/http.umd.js',
+  '@angular/router': 'vendor/@angular/router/bundles/router.umd.js',
+  '@angular/forms': 'vendor/@angular/forms/bundles/forms.umd.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
-  'node-uuid': {
-    format: 'global',
-    defaultExtension: 'js',
-    main: 'uuid.js'
-  }
+  'app': {main: 'main', defaultExtension: 'js'},
+  'rxjs': {main: 'Rx.js', defaultExtension: 'js'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,22 +38,18 @@ const barrels: string[] = [
   '@angular/core',
   '@angular/common',
   '@angular/compiler',
+  '@angular/forms',
   '@angular/http',
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
-  '@ngrx/core',
-  '@ngrx/store',
-  '@ngrx/effects',
-  '@angular/forms',
 
   // Thirdparty barrels.
   'rxjs',
 
   // App specific barrels.
   'app',
-  'app/shared',
-  'app/notes',
+  'app/shared'
   /** @cli-barrel */
 ];
 
@@ -56,7 +66,6 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    '@ngrx': 'vendor/@ngrx',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages

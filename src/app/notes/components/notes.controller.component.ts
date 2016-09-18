@@ -8,8 +8,7 @@ import { AddButtonComponent } from './add.button.component';
 @Component({
   moduleId: module.id,
   selector: 'app-controller-notes',
-  templateUrl: 'notes.controller.component.html',
-  directives: [NoteComponent,AddButtonComponent]
+  templateUrl: 'notes.controller.component.html'
 })
 export class NotesControllerComponent implements OnInit {
   notesDataService: NotesDataService;

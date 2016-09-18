@@ -10,8 +10,7 @@ import 'rxjs/add/operator/map';
 @Component({
   moduleId: module.id,
   selector: 'search',
-  templateUrl: 'search.component.html',
-  directives: [SearchBoxComponent, SearchItemRenderer]
+  templateUrl: 'search.component.html'
 })
 export class SearchComponent implements OnInit {
   private artists: any;
