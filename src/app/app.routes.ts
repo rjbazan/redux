@@ -3,6 +3,7 @@ import { SearchComponent } from './search/search.component';
 import { ArtistComponent } from './artist/artist.component';
 import { AlbumComponent } from './album/album.component';
 import { FormComponent } from './forms/form.component';
+import { CalendarComponent } from './calendar/calendar';
 import { AboutComponent } from './about/about.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,7 +13,8 @@ const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'album/:id', component: AlbumComponent},
-  {path: 'forms', component: FormComponent}
+  {path: 'forms', component: FormComponent},
+  {path: 'calendar', component: CalendarComponent}
 ];
 
 export const appRoutingProviders: any[] = [

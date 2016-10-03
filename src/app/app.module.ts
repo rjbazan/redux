@@ -15,6 +15,10 @@ import { ArtistComponent } from './artist/artist.component';
 import { AlbumComponent } from './album/album.component';
 import { FormComponent } from './forms/form.component';
 import { AboutComponent } from './about/about.component';
+import { CalendarComponent } from './calendar/calendar';
+import { CountriesComponent } from './calendar/countries';
+import { CountryDetailsComponent } from './calendar/countryDetails';
+import { MyDatePickerModule } from 'mydatepicker/dist/my-date-picker.module';
 import { SpotifyService } from './services/spotify.service';
 import { formReducer } from './forms/formReducer';
 
@@ -28,7 +32,8 @@ import { formReducer } from './forms/formReducer';
     StoreModule.provideStore(formReducer),
     SearchModule
   ],
-  declarations: [AppComponent, NavbarComponent, ArtistComponent, AlbumComponent, FormComponent, AboutComponent, RadioSelectorComponent],
+  declarations: [AppComponent, NavbarComponent, ArtistComponent, AlbumComponent, FormComponent,
+    AboutComponent, RadioSelectorComponent, CalendarComponent, CountriesComponent, CountryDetailsComponent],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent],
 })

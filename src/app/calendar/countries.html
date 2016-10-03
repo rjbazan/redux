@@ -1,0 +1,10 @@
+<div class="col-md-2">
+  <ul *ngIf="selectedCountry">
+    <li *ngFor="let country of countries"
+    	  [ngClass]="{'well well-sm' : selectedCountry == country.id}"
+        (click)="changeCountry(country.id)">
+      {{country.name}}
+    </li>
+  </ul>
+</div>
+<ng-content></ng-content>
